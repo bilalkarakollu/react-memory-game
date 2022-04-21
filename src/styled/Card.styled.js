@@ -4,7 +4,7 @@ export const CardRow = styled.div`
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat( auto-fill, minmax(120px, 1fr) );
-    @media(max-width: 400px) {
+    @media(max-width: ${({theme}) => theme}) {
         grid-template-columns: auto auto;
     }
     max-width: 100%;
@@ -18,6 +18,10 @@ export const Card = styled.div`
     background-color: antiquewhite;
     border-radius: 12px;
     cursor: pointer;
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        width: 160px;
+        height: 160px;
+    }
 `;
 
 export const CardInner = styled.div`

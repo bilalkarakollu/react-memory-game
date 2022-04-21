@@ -1,12 +1,12 @@
-import CardArea from "./components/CardArea"
-import { Container } from "./styled/Container.styled"
+import CardArea from "./components/CardArea";
+import { Container } from "./styled/Container.styled";
 
 const App = () => {
   return (
     <Container>
-      <CardArea/>
+      <CardArea />
     </Container>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -8,11 +8,14 @@ export const ScoreRow = styled.div`
     background-color: antiquewhite;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 `;
 
 export const Score = styled.div`
     font-size: 2rem;
     font-weight: bold;
     color: #2F2F2F;
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        font-size: 1rem;
+    }
 `;

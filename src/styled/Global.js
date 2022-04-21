@@ -32,6 +32,9 @@ export const Button = styled.button`
         background-color: ${({bg, disabled}) => disabled ? '#ccc' : '#2F2F2F'};
         color: #F4F5F7;
     }   
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        font-size: 1rem;
+    }
 `;
 
 export const Flex = styled.div`
