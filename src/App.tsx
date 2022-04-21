@@ -1,10 +1,11 @@
-import React from 'react'
+import CardArea from "./components/CardArea"
+import { Container } from "./styled/Container.styled"
 
 const App = () => {
   return (
-    <div>
-      hi
-    </div>
+    <Container>
+      <CardArea/>
+    </Container>
   )
 }
 
