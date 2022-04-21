@@ -10,14 +10,20 @@ interface CardProps {
 
 export const CardRow = styled.div`
     display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat( auto-fill, minmax(120px, 1fr) );
-    @media(max-width: ${({theme}) => theme}) {
-        grid-template-columns: auto auto;
+    
+    @media(min-width: ${({theme}) => theme.mobile}) {
+        grid-template-columns: repeat( auto-fill, minmax(120px, 1fr) );
+        grid-gap: 20px;
+        margin: 50px 0;
+    }
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        grid-template-columns: auto auto auto auto auto;
+        grid-gap: 10px;
+        margin: 20px 0;
+        padding: 0 0.5rem;
     }
     max-width: 100%;
     justify-content: space-between;
-    margin: 50px 0;
 `;
 
 export const Card = styled.div`
@@ -27,8 +33,8 @@ export const Card = styled.div`
     border-radius: 12px;
     cursor: pointer;
     @media(max-width: ${({theme}) => theme.mobile}) {
-        width: 160px;
-        height: 160px;
+        width: 50px;
+        height: 50px;
     }
 `;
 
@@ -74,6 +80,9 @@ export const CardBack = styled(CardFrontandBack)`
     transform: rotateY(180deg);
     border-radius: 12px;
     padding: 15px;
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        padding: 5px;
+    }
 `;
 
 
