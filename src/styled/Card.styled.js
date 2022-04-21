@@ -30,6 +30,7 @@ export const CardInner = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transform: rotateY(${props => props.isFlipped ? '180deg' : '0deg'});
     border-radius: 12px;
+    border: 1px solid ${({isComplated}) => isComplated ? 'orange' : 'none'};
 `;
 
 const CardFrontandBack = styled.div`
@@ -69,5 +70,6 @@ export const CardImage = styled.img`
     border-radius: 12px;
     object-fit: contain;
     object-position: center;
+    filter: ${({isComplated}) => isComplated ? 'grayscale(80%)' : 'none'};
 `;
 

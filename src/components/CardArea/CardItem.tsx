@@ -1,26 +1,35 @@
-import { Card, CardInner, CardFront, CardBack, CardImage } from "../../styled/Card.styled";
-import { useState } from "react";
+import {
+  Card,
+  CardInner,
+  CardFront,
+  CardBack,
+  CardImage,
+} from "../../styled/Card.styled";
 
+import { ItemType } from "../../types/item";
+import { useAppDispatch } from "../../store/hooks";
+import { changeOpen } from "../../store/slices/gameSlice";
 interface CardItemProps {
-  item: string;
+  item: ItemType;
 }
 
-const CardItem = (props:CardItemProps) => {
+const CardItem = (props: CardItemProps) => {
+  const { item } = props;
 
-  const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
 
   const handleClick = () => {
-    setIsFlipped(!isFlipped);
+    dispatch(changeOpen(item.id));
   };
 
   return (
     <Card onClick={handleClick}>
-      <CardInner isFlipped={isFlipped}>
+      <CardInner isComplated={item.completed} isFlipped={item.open}>
         <CardFront>
           <h1>?</h1>
         </CardFront>
         <CardBack>
-          <CardImage src={`/images/${props.item}.png`} alt="Card Back" />
+          <CardImage isComplated={item.completed} src={`/images/${item.name}.png`} alt="Card Back" />
         </CardBack>
       </CardInner>
     </Card>

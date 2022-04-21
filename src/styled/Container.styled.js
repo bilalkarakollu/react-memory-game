@@ -5,4 +5,4 @@ export const Container = styled.div`
     max-width: 100%;
     padding: 0 1.5rem;
     width: 900px;
-    `;
+`;
