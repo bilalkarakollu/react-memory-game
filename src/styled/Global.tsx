@@ -1,5 +1,11 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
+interface GlobalProps {
+    bg?: string;
+    disabled?: boolean;
+    justify?: string;
+}
+
 export const GlobalStyles = createGlobalStyle`
     * {
         box-sizing: border-box;
@@ -17,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 
-export const Button = styled.button`
+export const Button = styled.button<GlobalProps>`
     background-color: ${({bg, disabled}) => disabled ? '#ccc' : bg};
     border: none;
     border-radius: 5px;
@@ -37,7 +43,7 @@ export const Button = styled.button`
     }
 `;
 
-export const Flex = styled.div`
+export const Flex = styled.div<GlobalProps>`
     display: flex;
     justify-content: ${({justify}) => justify};
     align-items: center;

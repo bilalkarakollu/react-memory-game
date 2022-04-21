@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+interface CardProps {
+    isFlipped?: boolean;
+    isComplated?: boolean;
+    src?: string;
+    alt?: string;
+}
+
+
 export const CardRow = styled.div`
     display: grid;
     grid-gap: 20px;
@@ -24,7 +32,7 @@ export const Card = styled.div`
     }
 `;
 
-export const CardInner = styled.div`
+export const CardInner = styled.div<CardProps>`
     position: relative;
     width: 100%;
     height: 100%;
@@ -68,7 +76,9 @@ export const CardBack = styled(CardFrontandBack)`
     padding: 15px;
 `;
 
-export const CardImage = styled.img`
+
+
+export const CardImage = styled.img<CardProps>`
     width: 100%;
     height: 100%;
     border-radius: 12px;
